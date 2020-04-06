@@ -1,7 +1,9 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es6: true,
+    amd: true,
   },
   extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:prettier/recommended'],
   globals: {
@@ -17,7 +19,9 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
-    quotes: ['error', 'double'],
+    quotes: ['error', 'single'],
+    'no-console': 'warn',
     'prettier/prettier': 2,
+    'no-unused-vars': 'warn',
   },
 };

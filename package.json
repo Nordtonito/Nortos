@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --mode development --config webpack.config.dev.js --open",
-    "start-prod": "webpack-dev-server --mode development --config webpack.config.prod.js --open",
-    "prettier": "prettier --write **/**/*.js"
+    "dev": "webpack-dev-server --mode development --config webpack.config.dev.js --open",
+    "prod": "webpack-dev-server --mode development --config webpack.config.prod.js --open",
+    "eslint": "eslint **/*.js",
+    "prettier": "prettier --write **/*.js"
   },
   "repository": {
     "type": "git",
@@ -70,7 +71,6 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.8.7",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

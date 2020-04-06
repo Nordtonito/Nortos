@@ -1,25 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Main = (props) => (
+import { connect } from 'react-redux';
+
+const Main = ({decrement, increment, value}) => {
+
+  return (
   <div className="container">
     <h1 className="basic-class">Welcome to Nortos</h1>
     <div>
-      <button className="btn btn-primary mr-3" onClick={props.decrement}>
+      <button className="btn btn-primary mr-3" onClick={decrement}>
         -
       </button>
-      <span>{props.value}</span>
-      <button className="btn btn-primary ml-3" onClick={props.increment}>
+      <span>{ value }</span>
+      <button className="btn btn-primary ml-3" onClick={increment}>
         +
       </button>
     </div>
   </div>
-);
+)
+};
 
 Main.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.object.isRequired,
   increment: PropTypes.func.isRequired,
   decrement: PropTypes.func.isRequired,
 };
 
-export default Main;
+const mapStateToProps = (state) => (state);
+
+const mapDispatchToProps = (dispatch) => ({
+  increment: () => dispatch({ type: 'INC' }),
+  decrement: () => dispatch({ type: 'DEC' }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

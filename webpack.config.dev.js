@@ -1,18 +1,18 @@
-require('@babel/polyfill');
+/* eslint-disable */
 
-let path = require('path');
+const path = require('path');
 
-let webpack = require('webpack');
+const webpack = require('webpack');
 
-let CopyWebpackPlugin = require('copy-webpack-plugin');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-let autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: false,
   entry: {
-    main: ['@babel/polyfill', './src/app/index.js', './src/css/main.sass'],
+    main: ['./src/app/index.js', './src/css/main.sass'],
   },
   output: {
     filename: '[name].js',
@@ -75,6 +75,7 @@ module.exports = {
       },
     ],
   },
+  resolve: { extensions: ['.js', '.jsx'] },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

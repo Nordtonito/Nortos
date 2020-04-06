@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 
-import Main from '../containers/MainContainer';
+import Main from './Main';
 
 const App = (props) => (
   <Provider store={props.store}>
@@ -13,5 +13,4 @@ const App = (props) => (
 App.propTypes = {
   store: PropTypes.object.isRequired,
 };
-
 export default App;

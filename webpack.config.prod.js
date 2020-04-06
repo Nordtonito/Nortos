@@ -1,18 +1,18 @@
-require('@babel/polyfill');
+/* eslint-disable */
 
-let path = require('path');
+const path = require('path');
 
-let webpack = require('webpack');
+const webpack = require('webpack');
 
-let CopyWebpackPlugin = require('copy-webpack-plugin');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let CleanWebpackPlugin = require('clean-webpack-plugin');
-let MiniCssExtractPlugin = require('mini-css-extract-plugin');
-let UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-let ImageMinPlugin = require('imagemin-webpack-plugin');
-let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const ImageMinPlugin = require('imagemin-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-let autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: false,
@@ -64,12 +64,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Popper: ['popper.js', 'default'],
-    }),
     new CopyWebpackPlugin([{ from: 'src/img', to: 'img' }]),
     new webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
@@ -77,8 +71,6 @@ module.exports = {
     }),
     new CleanWebpackPlugin(['dist']),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',
     }),
