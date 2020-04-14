@@ -8,6 +8,7 @@ const Main = ({decrement, increment, value}) => {
 
 
 
+
   return (
   <div className="container">
     <h1 className="basic-class">Welcome to Nortos</h1>
