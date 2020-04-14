@@ -6,10 +6,9 @@ import App from './components/App.jsx';
 
 import store from './store';
 
-render((
+render(
   <BrowserRouter>
     <App store={store} />
-  </BrowserRouter>
-  ),
-  document.getElementById('root'));
- 
+  </BrowserRouter>,
+  document.getElementById('root'),
+);

@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --config webpack.config.dev.js --open",
     "prod": "webpack-dev-server --mode development --config webpack.config.prod.js --open",
-    "eslint": "eslint **/*.js",
-    "prettier": "prettier --write **/*.js"
+    "lint": "eslint **/*.js **/*.jsx",
+    "format": "prettier --write **/*.js **/*.jsx"
   },
+  "pre-commit": [
+    "eslint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nordtonito/Nortos.git"
