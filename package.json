@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --mode development --config webpack.config.dev.js --open",
     "prod": "webpack-dev-server --mode development --config webpack.config.prod.js --open",
     "eslint": "eslint **/*.js",
-    "prettier": "prettier --write **/*.js"
+    "prettier": "prettier --write **/*.js",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "eslint-plugin-react": "^7.19.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.4",
+    "husky": "^4.2.5",
     "imagemin-webpack-plugin": "^2.4.2",
     "img-loader": "^3.0.1",
     "jest": "^25.2.7",
@@ -70,11 +72,19 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
+  "lint-staged": {
+    "*.{js, jsx}": [
+      "node_modules/.bin/eslint --max-warnings=0",
+      "eslint **/*.js",
+      "git add"
+    ]
+  },
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
     "redux": "^4.0.5"
   }
 }
