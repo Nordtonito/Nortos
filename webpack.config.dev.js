@@ -1,7 +1,5 @@
 /* eslint-disable */
 
-const path = require('path');
-
 const webpack = require('webpack');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -31,9 +29,15 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/react'],
+              presets: [
+                '@babel/preset-env',
+                '@babel/react',
+                {
+                  plugins: ['@babel/plugin-proposal-class-properties'],
+                },
+              ],
               cacheDirectory: true,
-              plugins: ['react-hot-loader/babel'],
+              plugins: ['react-hot-loader/babel', '@babel/plugin-proposal-class-properties'],
             },
           },
         ],
@@ -62,7 +66,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|gif|jpe?g)$/,
+        test: /\.(png|cur|gif|jpe?g)$/,
         use: [
           {
             loader: 'file-loader',
