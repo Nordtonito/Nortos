@@ -2,7 +2,11 @@ import React from 'react';
 
 class About extends React.Component {
   render() {
-    return <h1>About Nortos</h1>;
+    return (
+      <div className="main">
+        <h1>About Nortos</h1>
+      </div>
+    );
   }
 }
 

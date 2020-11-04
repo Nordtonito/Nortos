@@ -32,7 +32,13 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/react'],
+              presets: [
+                '@babel/preset-env',
+                '@babel/react',
+                {
+                  plugins: ['@babel/plugin-proposal-class-properties'],
+                },
+              ],
             },
           },
         ],
@@ -83,7 +89,7 @@ module.exports = {
     minimizer: [
       new UglifyJSPlugin({ sourceMap: true }),
       new ImageMinPlugin({
-        test: /\.(png|jpe?g|gif|svg)$/,
+        test: /\.(png|cur|jpe?g|gif|svg)$/,
       }),
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: { sourceMap: true },

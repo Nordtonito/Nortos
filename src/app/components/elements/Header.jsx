@@ -8,6 +8,7 @@ class Header extends React.Component {
       <nav className="navigation">
         <Link to="/">Home page</Link>
         <Link to="/about">About</Link>
+        <Link to="/account">Account</Link>
         <Link to="/not-found">ERROR 404</Link>
       </nav>
     );
